@@ -1,2 +1,0 @@
-#!/bin/bash
-rspec spec
