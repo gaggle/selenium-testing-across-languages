@@ -1,0 +1,11 @@
+{
+  "name": "js-webdriver.io",
+  "scripts": {
+    "test": "concurrently --kill-others -s \"last\" -p \"[{name}]\" -n \"SERV,TEST\" \"java -jar selenium-server-standalone-3.0.1.jar\" \"wdio wdio.conf.js\""
+  },
+  "devDependencies": {
+    "concurrently": "^3.1.0",
+    "wdio-mocha-framework": "^0.5.4",
+    "webdriverio": "^4.4.0"
+  }
+}

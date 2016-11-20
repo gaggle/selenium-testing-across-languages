@@ -1,0 +1,14 @@
+{
+  "name": "js-wd",
+  "scripts": {
+    "test": "concurrently --kill-others -s \"last\" -p \"[{name}]\" -n \"SERV,TEST\" \"java -jar selenium-server-standalone-3.0.1.jar\" \"mocha\""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "3.5.0",
+    "chai-as-promised": "6.0.0",
+    "concurrently": "^3.1.0",
+    "mocha": "^3.1.2",
+    "wd": "^1.0.0"
+  }
+}
