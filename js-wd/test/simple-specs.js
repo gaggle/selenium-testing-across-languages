@@ -1,16 +1,16 @@
-var chai = require("chai")
-var chaiAsPromised = require("chai-as-promised")
+"use strict";
+const chai = require("chai")
+const chaiAsPromised = require("chai-as-promised")
+const wd = require("wd")
+
 chai.use(chaiAsPromised)
 chai.should()
-
-wd = require("wd")
-
 chaiAsPromised.transferPromiseness = wd.transferPromiseness
 
 describe("simple", function () {
-  this.timeout(10000)
+  this.timeout(30000)
 
-  var browser
+  let browser
 
   before(function () {
     browser = wd.promiseChainRemote()
@@ -21,7 +21,10 @@ describe("simple", function () {
     return browser.quit()
   })
 
-  it("should retrieve the page title", function () {
-    return browser.get("http://google.com").title().should.become("Google")
+  describe("google", function () {
+    it("should have expected title", function () {
+      return browser.get("http://google.com").title()
+        .should.become("Google")
+    })
   })
 })
